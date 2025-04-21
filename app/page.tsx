@@ -1,16 +1,25 @@
+import dynamic from "next/dynamic";
 
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Navbar from "@/components/Navbar";
+const Hero = dynamic(() => import("@/components/Hero"));
+const About = dynamic(() => import("@/components/About"));
+const Navbar = dynamic(() => import("@/components/Navbar"));
+const Services = dynamic(() => import("@/components/Services"));
+const Cursor = dynamic(() => import("@/components/Coursor"));
+const BackgroundBeams = dynamic(() =>
+  import("@/components/collisionbg").then((mod) => mod.BackgroundBeams)
+);
+const Footer = dynamic(() => import("@/components/Footer"));
+const BEams = dynamic(() =>
+  import("./seo/components/BEams").then((mod) => mod.BEams)
+);
+const HeroParallaxDemo = dynamic(() =>
+  import("./about/components/SecondAbout").then((mod) => mod.HeroParallaxDemo)
+);
+const AnimatedListDemo = dynamic(() =>
+  import("@/components/Tech").then((mod) => mod.AnimatedListDemo)
+);
 
-import Services from "@/components/Services";
-import Cursor from "@/components/Coursor";
 
-import { BackgroundBeams } from "@/components/collisionbg";
-import Footer from "@/components/Footer";
-import { BEams } from "./seo/components/BEams";
-import { HeroParallaxDemo } from "./about/components/SecondAbout";
-import { AnimatedListDemo } from "@/components/Tech";
 
 export default function Home() {
   return (
