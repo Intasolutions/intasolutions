@@ -17,7 +17,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_10px_-5px_rgba(0,0,0,0.5)] will-change-transform",
         className,
       )}
     >
@@ -39,7 +39,6 @@ export function BEams({ className }: { className?: string }) {
   const div7Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Ensure refs are available
     if (
       !containerRef.current ||
       !div1Ref.current ||
@@ -51,17 +50,21 @@ export function BEams({ className }: { className?: string }) {
       !div7Ref.current
     ) return;
 
-    // Create a GSAP timeline for the animation
+    // Optimize ScrollTrigger with fastScrollEnd
+    ScrollTrigger.config({ syncInterval: 100 });
+
+    // Create a GSAP timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%", // Start when the top of the container is 80% from the top of the viewport
-        end: "bottom 20%", // End when the bottom is 20% from the top
-        toggleActions: "restart none none reset", // Restart on enter, reset on leave
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reset",
+        fastScrollEnd: true,
       },
     });
 
-    // Animate circles with a "super" effect (scale, opacity, stagger)
+    // Simplified circle animation
     tl.from(
       [
         div1Ref.current,
@@ -75,46 +78,27 @@ export function BEams({ className }: { className?: string }) {
       {
         scale: 0,
         opacity: 0,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-        stagger: 0.2, // Stagger the animation for each circle
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.1,
       },
-    )
-      // Add a bounce effect after they appear
-      .to(
-        [
-          div1Ref.current,
-          div2Ref.current,
-          div3Ref.current,
-          div4Ref.current,
-          div5Ref.current,
-          div6Ref.current,
-          div7Ref.current,
-        ],
-        {
-          scale: 1.2,
-          duration: 0.3,
-          yoyo: true,
-          repeat: 1,
-          ease: "power1.inOut",
-        },
-      );
+    );
 
-    // Animate beams (assuming AnimatedBeam has a way to expose its path elements)
-    // If AnimatedBeam uses SVG paths, you could target them with a ref or class
+    // Simplified beam animation
     gsap.from(".animated-beam-path", {
-      strokeDashoffset: 100,
-      strokeDasharray: 100,
-      duration: 2,
-      ease: "power2.inOut",
+      strokeDashoffset: 50,
+      strokeDasharray: 50,
+      duration: 1.5,
+      ease: "power1.inOut",
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 80%",
-        toggleActions: "restart none none reset",
+        toggleActions: "play none none reset",
+        fastScrollEnd: true,
       },
     });
 
-    // Cleanup on unmount
+    // Cleanup
     return () => {
       tl.kill();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -164,47 +148,48 @@ export function BEams({ className }: { className?: string }) {
         containerRef={containerRef}
         fromRef={div1Ref}
         toRef={div6Ref}
-        duration={3}
+        duration={2}
         className="animated-beam-path"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div2Ref}
         toRef={div6Ref}
-        duration={3}
+        duration={2}
         className="animated-beam-path"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div3Ref}
         toRef={div6Ref}
-        duration={3}
+        duration={2}
         className="animated-beam-path"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div4Ref}
         toRef={div6Ref}
-        duration={3}
+        duration={2}
         className="animated-beam-path"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div5Ref}
         toRef={div6Ref}
-        duration={3}
+        duration={2}
         className="animated-beam-path"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div6Ref}
         toRef={div7Ref}
-        duration={3}
+        duration={2}
         className="animated-beam-path"
       />
     </div>
   );
 }
+
 const Icons = {
   notion: () => (
     <svg
@@ -534,11 +519,11 @@ const Icons = {
         fill="#201515"
       />
       <path
-        d="M169.515 0.00366253C168.666 -0.0252113 167.82 0.116874 167.027 0.421484C166.234 0.726094 165.511 1.187 164.899 1.77682C164.297 2.3723 163.824 3.08658 163.512 3.87431C163.2 4.66204 163.055 5.50601 163.086 6.35275C163.056 7.20497 163.201 8.05433 163.514 8.84781C163.826 9.64129 164.299 10.3619 164.902 10.9646C165.505 11.5673 166.226 12.0392 167.02 12.3509C167.814 12.6626 168.663 12.8074 169.515 12.7762C170.362 12.8082 171.206 12.6635 171.994 12.3514C172.782 12.0392 173.496 11.5664 174.091 10.963C174.682 10.3534 175.142 9.63077 175.446 8.83849C175.75 8.04621 175.89 7.20067 175.859 6.35275C175.898 5.50985 175.761 4.66806 175.456 3.88115C175.151 3.09424 174.686 2.37951 174.09 1.78258C173.493 1.18565 172.779 0.719644 171.992 0.414327C171.206 0.109011 170.364 -0.0288946 169.521 0.00938803L169.515 0.00366253Z"
+        d="M169.515 0.00366253C168.666 -0.0252113 167.82 0.116874 167 W027 0.421484C166.234 0.726094 165.511 1.187 164.899 1.77682C164.297 2.3723 163.824 3.08658 163.512 3.87431C163.2 4.66204 163.055 5.50601 163.086 6.35275C163.056 7.20497 163.201 8.05433 163.514 8.84781C163.826 9.64129 164.299 10.3619 164.902 10.9646C165.505 11.5673 166.226 12.0392 167.02 12.3509C167.814 12.6626 168.663 12.8074 169.515 12.7762C170.362 12.8082 171.206 12.6635 171.994 12.3514C172.782 12.0392 173.496 11.5664 174.091 10.963C174.682 10.3534 175.142 9.63077 175.446 8.83849C175.75 8.04621 175.89 7.20067 175.859 6.35275C175.898 5.50985 175.761 4.66806 175.456 3.88115C175.151 3.09424 174.686 2.37951 174.09 1.78258C173.493 1.18565 172.779 0.719644 171.992 0.414327C171.206 0.109011 170.364 -0.0288946 169.521 0.00938803L169.515 0.00366253Z"
         fill="#201515"
       />
       <path
-        d="M146.201 14.6695C142.357 14.6695 139.268 15.8764 136.935 18.2902C135.207 20.0786 133.939 22.7479 133.131 26.2981H132.771L131.295 15.7563H121.657V66H132.942V45.3054H133.354C133.698 46.6852 134.181 48.0267 134.795 49.3093C135.75 51.3986 137.316 53.1496 139.286 54.3314C141.328 55.446 143.629 56.0005 145.955 55.9387C150.68 55.9387 154.277 54.0988 156.748 50.419C159.219 46.7392 160.455 41.6046 160.455 35.0153C160.455 28.6509 159.259 23.6689 156.869 20.0691C154.478 16.4694 150.922 14.6695 146.201 14.6695ZM147.345 42.9602C146.029 44.8668 143.97 45.8201 141.167 45.8201C140.012 45.8735 138.86 45.6507 137.808 45.1703C136.755 44.6898 135.832 43.9656 135.116 43.0574C133.655 41.2233 132.927 38.7122 132.931 35.5243V34.7807C132.931 31.5432 133.659 29.0646 135.116 27.3448C136.572 25.625 138.59 24.7747 141.167 24.7937C144.02 24.7937 146.092 25.6994 147.385 27.5107C148.678 29.322 149.324 31.8483 149.324 35.0896C149.332 38.4414 148.676 41.065 147.356 42.9602H147.345Z"
+        d="M146.201 14.6695C142.357 14.6695 139.268 15.8764 136.935 18.2902C135.207 20.0786 133.939 22.7479 133.131 26.2981H132.771L131.295 15.7563H121.657V66H132.942V45.3054H133.354C133.698 46.6852 134.181 48.0267 134.795 49.3093C135.75 51.3986 137.316 53.1496 139.286 54.3314C141.328 55.446 143.629 56.0005 145.955 55.9387C150.68 55.9387 154.277 54.0988 156.748 50.419C159.219 46.7392 160.455 41.6046 160.455 35.0153C160.455 28.6509 159.259 23.6689 156.869 20.0691C154.478 16.4694 150.922 14.6695 146.201 14.6695ZM147.345 42.9602C146.029 44.8668 143.97 45.820 perspective1 141.167 45.8201C140.012 45.8735 138.86 45.6507 137.808 45.1703C136.755 44.6898 135.832 43.9656 135.116 43.0574C133.655 41.2233 132.927 38.7122 132.931 35.5243V34.7807C132.931 31.5432 133.659 29.0646 135.116 27.3448C136.572 25.625 138.59 24.7747 141.167 24.7937C144.02 24.7937 146.092 25.6994 147.385 27.5107C148.678 29.322 149.324 31.8483 149.324 35.0896C149.332 38.4414 148.676 41.065 147.356 42.9602H147.345Z"
         fill="#201515"
       />
       <path d="M39.0441 45.2253H0V54.789H39.0441V45.2253Z" fill="#FF4F00" />

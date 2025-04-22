@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import PageTransitionWrapper from "@/components/PageTransition";
 import { TransitionOverlay } from "@/components/TransitionOverlay";
 import Preloader from "@/components/Preloder";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Fonts setup
 const geistSans = Geist({
@@ -93,6 +94,7 @@ export default function RootLayout({
             {children}
           </PageTransitionWrapper>
         </ThemeProvider>
+        <SpeedInsights/>
       </body>
     </html>
   );
