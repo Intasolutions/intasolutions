@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 
 import "@/app/globals.css";
 import { motion} from "framer-motion";
-import ServiceHero from "./components/ServiceHero";
 import WhyChooseUs from "./components/whyChoose";
 
 import ServiceFeatures from "./components/ServiceFeature";
@@ -12,6 +11,7 @@ import ServiceFeatures from "./components/ServiceFeature";
 import { BEams } from "./components/BEams";
 import Footer from "../about/components/AboutFooter";
 import CTABanner from "./components/BOOK";
+import ServiceHero from "./components/ServiceHero";
 
 
 
@@ -24,13 +24,12 @@ export default function AboutPage() {
   <Navbar />
 
 <div>
-  <ServiceHero 
-   title="Web Development "
-   description="Web development is the process of creating and maintaining websites and web apps, ensuring functionality, responsiveness, and seamless user experience. 🚀"
-   backgroundImage="/img/web-dev-bg.jpg"
-   ctaText="Get a Free Consultation"
-   ctaLink="/contact"
-  />
+ <ServiceHero 
+ title="Web Development "
+ description="Web development is the process of creating and maintaining websites and web apps, ensuring functionality, responsiveness, and seamless user experience. 🚀"
+ backgroundImage="/img/web-dev-bg.jpg"
+ ctaText="Get a Free Consultation"
+ ctaLink="/contact" />
 </div>
 
 

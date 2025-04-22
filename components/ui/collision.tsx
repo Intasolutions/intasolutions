@@ -137,12 +137,12 @@ const CollisionMechanism = React.forwardRef<
         const beamRect = beamRef.current.getBoundingClientRect();
         const containerRect = containerRef.current.getBoundingClientRect();
         const parentRect = parentRef.current.getBoundingClientRect();
-
+  
         if (beamRect.bottom >= containerRect.top) {
           const relativeX =
             beamRect.left - parentRect.left + beamRect.width / 2;
           const relativeY = beamRect.bottom - parentRect.top;
-
+  
           setCollision({
             detected: true,
             coordinates: {
@@ -154,11 +154,12 @@ const CollisionMechanism = React.forwardRef<
         }
       }
     };
-
+  
     const animationInterval = setInterval(checkCollision, 50);
-
+  
     return () => clearInterval(animationInterval);
-  }, [cycleCollisionDetected, containerRef]);
+  }, [cycleCollisionDetected, containerRef, parentRef]); // Add parentRef here
+  
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {
