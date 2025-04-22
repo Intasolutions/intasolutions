@@ -20,11 +20,21 @@ const geistMono = Geist_Mono({
 
 // Metadata for SEO
 export const metadata: Metadata = {
-  title: "IN-TA Solutions | Empowering Businesses with Technology",
-  description: "IN-TA Solutions delivers cutting-edge digital, cloud, and software services to empower businesses globally.",
+  title: "IN-TA Solutions | Leading IT Company in Wayanad, Kerala",
+  description: "IN-TA Solutions is the top IT company in Wayanad, Kerala, offering web development, cloud services, and custom software solutions to businesses.",
   keywords: [
     "IN-TA Solutions",
     "IT Services",
+    "IT Company in Wayanad",
+    "IT Company in Kerala",
+    "Web Development Kerala",
+    "Cloud Solutions Kerala",
+    "Software Development Wayanad",
+    "Business Digital Solutions",
+    "Custom Software Kerala",
+    "Tech Company Wayanad",
+    "Digital Transformation Kerala",
+ 
     "Cloud Solutions",
     "Software Development",
     "Business Digital Solutions",
