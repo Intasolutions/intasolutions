@@ -40,7 +40,7 @@ export const TextGenerateEffect = ({
               key={word + idx}
               className={cn(
                 "opacity-0 transition-all",
-                idx === 2 ? "text-blue-500" : "dark:text-white text-black"
+                idx === 2 ? "" : "dark:text-white text-black"
               )}
               style={{
                 filter: filter ? "blur(0px)" : "none",

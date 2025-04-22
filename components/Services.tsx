@@ -10,13 +10,16 @@ const content = [
     description: "We build modern and responsive web applications tailored to your needs.",
     content: (
       <div className="relative w-full h-full cursor-pointer">
-        <Image
-          src="/img/service/web.png"
-          alt="Web Development"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
+   <div className="relative w-full h-full cursor-pointer">
+  <Image
+    src="/img/service/web.png"
+    alt="Web Development"
+    fill
+    style={{ objectFit: 'cover' }}
+    className="rounded-lg"
+  />
+</div>
+
       </div>
     )
   },
@@ -28,7 +31,7 @@ const content = [
         <Image
           src="/img/mobile.png"
           alt="Mobile Apps"
-          layout="fill"
+          fill
           objectFit="cover"
           className="rounded-lg"
         />
@@ -43,7 +46,7 @@ const content = [
         <Image
           src="/img/service/cloud1.png"
           alt="Cloud Services"
-          layout="fill"
+          fill
           objectFit="cover"
           className="rounded-lg"
         />
@@ -58,7 +61,7 @@ const content = [
         <Image
           src="/img/service/ai.png"
           alt="AI Solutions"
-          layout="fill"
+          fill
           objectFit="cover"
           className="rounded-lg"
         />
@@ -73,7 +76,7 @@ const content = [
         <Image
           src="/img/service/data.png"
           alt="Data Analytics & Security"
-          layout="fill"
+          fill
           objectFit="cover"
           className="rounded-lg"
         />
@@ -88,7 +91,7 @@ const content = [
         <Image
           src="/img/service/ui.png"
           alt="UI/UX Design"
-          layout="fill"
+          fill
           objectFit="cover"
           className="rounded-lg"
         />
@@ -103,7 +106,7 @@ const content = [
         <Image
           src="/img/service/digital.png"
           alt="Digital Marketing"
-          layout="fill"
+          fill
           objectFit="cover"
           className="rounded-lg"
         />
@@ -118,7 +121,7 @@ const content = [
         <Image
           src="/img/service/seo.png"
           alt="SEO"
-          layout="fill"
+          fill
           objectFit="cover"
           className="rounded-lg"
         />

@@ -4,7 +4,7 @@ const Hero = dynamic(() => import("@/components/Hero"));
 const About = dynamic(() => import("@/components/About"));
 const Navbar = dynamic(() => import("@/components/Navbar"));
 const Services = dynamic(() => import("@/components/Services"));
-const Cursor = dynamic(() => import("@/components/Coursor"));
+
 const BackgroundBeams = dynamic(() =>
   import("@/components/collisionbg").then((mod) => mod.BackgroundBeams)
 );
@@ -23,8 +23,8 @@ const AnimatedListDemo = dynamic(() =>
 
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hidden  ">
-      <Cursor />
+    <main className="w-full overflow-x-hiddenb  ">
+
       <Navbar />
 
       {/* Hero Section */}

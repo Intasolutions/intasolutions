@@ -5,7 +5,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 export function Hsparkles() {
   return (
     <div className="h-[10rem] w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="md:text-7xl text-5xl lg:text-5xl font-bold text-center text-white relative z-20">
+      <h1 className="md:text-7xl text-5xl lg:text-5xl font-bold text-center text-white relative z-20 mb-3">
      About Us
       </h1>
       <div className="w-[30rem] h-20 relative">

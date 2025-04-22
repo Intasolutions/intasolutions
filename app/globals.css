@@ -405,3 +405,6 @@ section {
 .preloader-logo {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+.animated-element {
+  will-change: transform, opacity;
+}

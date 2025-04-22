@@ -23,15 +23,6 @@ export default function AboutPage() {
 <main>
   <Navbar />
 
-<div>
-  <ServiceHero 
-   title="Web Development "
-   description="Web development is the process of creating and maintaining websites and web apps, ensuring functionality, responsiveness, and seamless user experience. 🚀"
-   backgroundImage="/img/web-dev-bg.jpg"
-   ctaText="Get a Free Consultation"
-   ctaLink="/contact"
-  />
-</div>
 
 
 <div>
