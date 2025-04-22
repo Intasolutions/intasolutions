@@ -92,9 +92,10 @@ export default function RootLayout({
           <TransitionOverlay />
           <PageTransitionWrapper>
             {children}
+            <SpeedInsights/>
           </PageTransitionWrapper>
         </ThemeProvider>
-        <SpeedInsights/>
+ 
       </body>
     </html>
   );
