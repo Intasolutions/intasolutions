@@ -20,7 +20,7 @@ import CTABanner from "./components/BOOK";
 
 export default function AboutPage() {
   return (
-<main>
+<main className="overflow-x-hidden">
   <Navbar />
 
 <div>

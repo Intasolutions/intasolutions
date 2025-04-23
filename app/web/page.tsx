@@ -20,7 +20,7 @@ import ServiceHero from "./components/ServiceHero";
 
 export default function AboutPage() {
   return (
-<main>
+<main className="overflow-x-hidden">
   <Navbar />
 
 <div>
