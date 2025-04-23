@@ -27,7 +27,7 @@ export const gridItems = [
       className: "lg:col-span-1 md:col-span-3 md:row-span-  min-h-[150px] max-h-[200px]",
       imgClassName: "",
       titleClassName: "justify-center",
-      img: "/img/secure2.jpg",
+      img: "/img/secure.jpg",
       spareImg: "",
     },
     {
