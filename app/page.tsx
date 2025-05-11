@@ -1,6 +1,7 @@
 // app/page.tsx
 "use client";
 
+import Grid from "@/components/Grid";
 import dynamic from "next/dynamic";
 
 const Hero = dynamic(() => import("@/components/Hero"));
@@ -34,6 +35,12 @@ export default function Home() {
         </div>
       </section>
 
+ <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-10">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10">
+          Why Choose Us
+        </h1>
+        <Grid />
+      </section>
       {/* Services Section */}
       <section className="min-h-screen flex items-center justify-center">
         <div className="w-full max-w-7xl relative z-10 p-4 sm:p-6">
