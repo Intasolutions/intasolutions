@@ -42,8 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Scroll Animation */}
-      <ScrollAnimation />
+  
 
      
 
