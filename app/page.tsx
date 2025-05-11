@@ -1,3 +1,6 @@
+// app/page.tsx
+"use client";
+
 import ScrollAnimation from "@/components/scrollanimate";
 import dynamic from "next/dynamic";
 
@@ -5,27 +8,21 @@ const Hero = dynamic(() => import("@/components/Hero"));
 const About = dynamic(() => import("@/components/About"));
 const Navbar = dynamic(() => import("@/components/Navbar"));
 const Services = dynamic(() => import("@/components/Services"));
-
 const BackgroundBeams = dynamic(() =>
   import("@/components/collisionbg").then((mod) => mod.BackgroundBeams)
 );
 const Footer = dynamic(() => import("@/components/Footer"));
 const BEams = dynamic(() =>
-git config --global core.autocrlf true
   import("./seo/components/BEams").then((mod) => mod.BEams)
 );
-
 const AnimatedListDemo = dynamic(() =>
   import("@/components/Tech").then((mod) => mod.AnimatedListDemo)
 );
-git config --global core.autocrlf true
-
-
 
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hiddenb  ">
-
+    <main className="w-full overflow-x-hidden">
+      {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
@@ -40,16 +37,15 @@ export default function Home() {
         </div>
       </section>
 
-     
-    
-
       {/* Services Section */}
       <section className="min-h-screen flex items-center justify-center">
         <div className="w-full max-w-7xl relative z-10 p-4 sm:p-6">
           <Services />
         </div>
       </section>
-      <ScrollAnimation/>
+
+      {/* Scroll Animation */}
+      <ScrollAnimation />
 
       {/* Tech Section */}
       <section className="py-16 sm:py-20">
