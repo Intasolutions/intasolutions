@@ -1,7 +1,6 @@
 // app/page.tsx
 "use client";
 
-import ScrollAnimation from "@/components/scrollanimate";
 import dynamic from "next/dynamic";
 
 const Hero = dynamic(() => import("@/components/Hero"));
