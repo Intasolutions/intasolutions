@@ -15,9 +15,7 @@ const Footer = dynamic(() => import("@/components/Footer"));
 const BEams = dynamic(() =>
   import("./seo/components/BEams").then((mod) => mod.BEams)
 );
-const AnimatedListDemo = dynamic(() =>
-  import("@/components/Tech").then((mod) => mod.AnimatedListDemo)
-);
+
 
 export default function Home() {
   return (
@@ -47,10 +45,7 @@ export default function Home() {
       {/* Scroll Animation */}
       <ScrollAnimation />
 
-      {/* Tech Section */}
-      <section className="py-16 sm:py-20">
-        <AnimatedListDemo />
-      </section>
+     
 
       {/* AI Integration Section */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center">
