@@ -11,12 +11,14 @@ const BackgroundBeams = dynamic(() =>
 );
 const Footer = dynamic(() => import("@/components/Footer"));
 const BEams = dynamic(() =>
+git config --global core.autocrlf true
   import("./seo/components/BEams").then((mod) => mod.BEams)
 );
 
 const AnimatedListDemo = dynamic(() =>
   import("@/components/Tech").then((mod) => mod.AnimatedListDemo)
 );
+git config --global core.autocrlf true
 
 
 
