@@ -1,3 +1,4 @@
+import ScrollAnimation from "@/components/scrollanimate";
 import dynamic from "next/dynamic";
 
 const Hero = dynamic(() => import("@/components/Hero"));
@@ -39,10 +40,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Parallax Section */}
-      <section className="w-full overflow-hidden">
-        <HeroParallaxDemo />
-      </section>
+     
+    
 
       {/* Services Section */}
       <section className="min-h-screen flex items-center justify-center">
@@ -50,6 +49,7 @@ export default function Home() {
           <Services />
         </div>
       </section>
+      <ScrollAnimation/>
 
       {/* Tech Section */}
       <section className="py-16 sm:py-20">
