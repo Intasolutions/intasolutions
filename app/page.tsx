@@ -13,9 +13,7 @@ const Footer = dynamic(() => import("@/components/Footer"));
 const BEams = dynamic(() =>
   import("./seo/components/BEams").then((mod) => mod.BEams)
 );
-const HeroParallaxDemo = dynamic(() =>
-  import("./about/components/SecondAbout").then((mod) => mod.HeroParallaxDemo)
-);
+
 const AnimatedListDemo = dynamic(() =>
   import("@/components/Tech").then((mod) => mod.AnimatedListDemo)
 );
