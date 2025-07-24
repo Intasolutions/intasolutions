@@ -177,7 +177,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-3 gap-12">
             {[
               { title: "Email", desc: "intasolutionpvtltd@gmail.com" },
-              { title: "Phone", desc: "+91 8129686484" },
+              { title: "Phone", desc: "+91 9447595381" },
               { title: "Address", desc: "Mananthavady, Wayanad " },
             ].map((item, idx) => (
               <motion.div
