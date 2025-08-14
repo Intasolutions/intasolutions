@@ -57,7 +57,7 @@ const ServiceHero: React.FC<HeroProps> = ({
           whileTap={{ scale: 0.9 }}
           className="mt-3"
         >
-         <Link href="https://wa.me/918129686484" target="_blank" rel="noopener noreferrer">
+         <Link href="https://wa.me/919447595381" target="_blank" rel="noopener noreferrer">
            <MagicButton title="Free Consultation" position="center"/>
           </Link>
         </motion.div>

@@ -32,7 +32,7 @@ const CTABanner = () => {
         <WhatsAppButton />
       </section>
 
-      {/* WhatsApp Floating Button (always on screen) */}
+   
       
     </>
   );

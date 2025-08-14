@@ -25,7 +25,7 @@ const WhatsAppButton = () => {
   return (
     <div ref={wrapperRef} className="flex justify-center mt-4">
       <a
-        href="https://wa.me/918129686484" // Replace with your number
+        href="https://wa.me/919447595381" 
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact us on WhatsApp"
